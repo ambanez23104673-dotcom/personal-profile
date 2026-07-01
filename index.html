@@ -2,114 +2,179 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>My Personal Profile</title>
+    <title>Augusto Manuel Bañez | Portfolio</title>
 
     <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
 
-    <div class="container">
+<div class="container">
 
-        <div class="profile-card">
+    <header class="hero">
 
-            <img src="profile.jpg" alt="Profile Picture" class="profile-picture">
+        <img src="image/profile.jpg" alt="Profile Picture" class="profile-picture">
 
-            <h1>Augusto Manuel L. Bañez _ 4C</h1>
+        <h1>Augusto Manuel L. Bañez</h1>
 
-            <h3>BS Computer Science Student</h3>
+        <h3>BS Computer Science Student</h3>
 
-            <p>
-                I am a Bachelor of Science in Computer Science student at
-                Don Mariano Marcos Memorial State University. I enjoy learning
-                programming, web development, and exploring new technologies.
-            </p>
+        <p id="clock"></p>
 
-        </div>
+        <button id="darkModeBtn">🌙 Dark Mode</button>
 
-        <div class="section">
+    </header>
 
-            <h2>👤 About Me</h2>
+    <section class="section">
 
-            <p>
-                I am a hardworking and responsible student who is eager to
-                improve my technical and problem-solving skills.
-            </p>
+        <h2>👤 About Me</h2>
 
-        </div>
+        <p>
+            I am a Bachelor of Science in Computer Science student at
+            Don Mariano Marcos Memorial State University.
+            I enjoy learning programming, web development,
+            and creating useful applications that solve real-world problems.
+        </p>
 
-        <div class="section">
+    </section>
 
-            <h2>🎓 Education</h2>
+    <section class="section">
 
-            <ul>
+        <h2>🎓 Education</h2>
 
-                <li>Don Mariano Marcos Memorial State University-SLUC</li>
+        <ul>
+            <li>Don Mariano Marcos Memorial State University - SLUC</li>
+            <li>Bachelor of Science in Computer Science</li>
+        </ul>
 
-                <li>Bachelor of Science in Computer Science</li>
+    </section>
 
-            </ul>
+    <section class="section">
 
-        </div>
+        <h2>💻 Tech Stack</h2>
 
-        <div class="section">
+        <div class="tech">
 
-            <h2>💻 Skills</h2>
+            <span>HTML5</span>
 
-            <ul>
+            <span>CSS3</span>
 
-                <li>HTML</li>
+            <span>JavaScript</span>
 
-                <li>CSS</li>
+            <span>Git</span>
 
-                <li>Java</li>
+            <span>GitHub</span>
 
-                <li>Python</li>
-
-                <li>Git & GitHub</li>
-
-            </ul>
+            <span>Visual Studio Code</span>
 
         </div>
 
-        <div class="section">
+    </section>
 
-            <h2>🎯 Hobbies</h2>
+    <section class="section">
 
-            <ul>
+        <h2>📊 Skills</h2>
 
-                <li>Playing Games</li>
+        <p>HTML</p>
 
-                <li>Watching Movies</li>
-
-                <li>Listening to Music</li>
-
-            </ul>
-
+        <div class="bar">
+            <div class="html">90%</div>
         </div>
 
-        <div class="section">
+        <p>CSS</p>
 
-            <h2>📞 Contact Information</h2>
-
-            <ul>
-
-                <li>Email: augusto@gmail.com</li>
-
-                <li>Phone: 09306491049</li>
-
-                <li>Location: Rosario, La Union, Philippines</li>
-
-            </ul>
-
+        <div class="bar">
+            <div class="css">85%</div>
         </div>
 
-    </div>
+        <p>JavaScript</p>
+
+        <div class="bar">
+            <div class="js">70%</div>
+        </div>
+
+        <p>Git & GitHub</p>
+
+        <div class="bar">
+            <div class="git">75%</div>
+        </div>
+
+    </section>
+
+    <section class="section">
+
+        <h2>🎯 Hobbies</h2>
+
+        <ul>
+
+            <li>🎮 Playing Games</li>
+
+            <li>🎬 Watching Movies</li>
+
+            <li>🎵 Listening to Music</li>
+
+            <li>💻 Learning New Technologies</li>
+
+        </ul>
+
+    </section>
+
+    <section class="section">
+
+        <h2>📞 Contact Information</h2>
+
+        <ul>
+
+            <li>Email: augustomanuelbanez@gmail.com</li>
+
+            <li>Phone: 09XXXXXXXXX</li>
+
+            <li>Location: La Union, Philippines</li>
+
+        </ul>
+
+    </section>
+
+    <section class="section">
+
+        <h2>📩 Contact Me</h2>
+
+        <form id="contactForm">
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Enter your name"
+                required>
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Enter your email"
+                required>
+
+            <textarea
+                id="message"
+                placeholder="Write your message"
+                required></textarea>
+
+            <button type="submit" class="sendBtn">
+
+                Send Message
+
+            </button>
+
+        </form>
+
+        <p id="successMessage"></p>
+
+    </section>
+
+</div>
+
+<script src="script.js"></script>
 
 </body>
 
