@@ -1,14 +1,295 @@
-/* Dark Mode */
+/* ===============================
+   GOOGLE FONT
+================================= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* ===============================
+   RESET
+================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+/* ===============================
+   BODY
+================================= */
+
+body{
+    background:linear-gradient(135deg,#0f172a,#1e3a8a,#2563eb);
+    min-height:100vh;
+    padding:40px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    transition:.4s;
+}
+
+/* ===============================
+   CONTAINER
+================================= */
+
+.container{
+    width:900px;
+    max-width:95%;
+    background:#ffffff;
+    border-radius:20px;
+    padding:40px;
+    box-shadow:0 15px 40px rgba(0,0,0,.25);
+    animation:fadeIn .8s ease;
+}
+
+/* ===============================
+   HERO
+================================= */
+
+.hero{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.profile-picture{
+    width:180px;
+    height:180px;
+    object-fit:cover;
+    border-radius:50%;
+    border:5px solid #2563eb;
+    transition:.4s;
+}
+
+.profile-picture:hover{
+    transform:scale(1.08);
+    box-shadow:0 10px 25px rgba(37,99,235,.45);
+}
+
+.hero h1{
+    margin-top:20px;
+    font-size:38px;
+    color:#0f172a;
+}
+
+.hero h3{
+    color:#2563eb;
+    margin-top:8px;
+    font-weight:500;
+}
+
+#clock{
+    margin-top:15px;
+    color:#64748b;
+}
+
+/* ===============================
+   BUTTON
+================================= */
+
+#darkModeBtn{
+    margin-top:20px;
+    padding:12px 24px;
+    background:#2563eb;
+    color:white;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16px;
+    transition:.3s;
+}
+
+#darkModeBtn:hover{
+    background:#1d4ed8;
+    transform:translateY(-3px);
+}
+
+/* ===============================
+   SECTIONS
+================================= */
+
+.section{
+    margin-top:35px;
+    padding:20px;
+    border-radius:15px;
+    transition:.3s;
+}
+
+.section:hover{
+    background:#f8fafc;
+}
+
+.section h2{
+    color:#1e3a8a;
+    margin-bottom:15px;
+    border-left:5px solid #2563eb;
+    padding-left:12px;
+}
+
+.section p{
+    color:#475569;
+    line-height:1.8;
+}
+
+/* ===============================
+   LIST
+================================= */
+
+ul{
+    list-style:none;
+}
+
+ul li{
+    margin:10px 0;
+    padding:12px;
+    background:#eff6ff;
+    border-radius:10px;
+    transition:.3s;
+}
+
+ul li:hover{
+    transform:translateX(8px);
+    background:#dbeafe;
+}
+
+/* ===============================
+   TECH STACK
+================================= */
+
+.tech{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+}
+
+.tech span{
+    background:#2563eb;
+    color:white;
+    padding:10px 18px;
+    border-radius:30px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.tech span:hover{
+    background:#1d4ed8;
+    transform:scale(1.08);
+}
+
+/* ===============================
+   SKILL BAR
+================================= */
+
+.bar{
+    width:100%;
+    background:#dbeafe;
+    border-radius:20px;
+    overflow:hidden;
+    margin-bottom:20px;
+}
+
+.bar div{
+    height:25px;
+    color:white;
+    line-height:25px;
+    text-align:right;
+    padding-right:10px;
+    animation:grow 2s ease;
+}
+
+.html{
+    width:90%;
+    background:#2563eb;
+}
+
+.css{
+    width:85%;
+    background:#3b82f6;
+}
+
+.js{
+    width:75%;
+    background:#0ea5e9;
+}
+
+.git{
+    width:80%;
+    background:#0284c7;
+}
+
+@keyframes grow{
+    from{
+        width:0;
+    }
+}
+
+/* ===============================
+   CONTACT FORM
+================================= */
+
+form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+input,
+textarea{
+    padding:14px;
+    border:1px solid #cbd5e1;
+    border-radius:10px;
+    font-size:15px;
+}
+
+input:focus,
+textarea:focus{
+    outline:none;
+    border-color:#2563eb;
+    box-shadow:0 0 10px rgba(37,99,235,.2);
+}
+
+textarea{
+    resize:none;
+    height:120px;
+}
+
+.sendBtn{
+    background:#2563eb;
+    color:white;
+    border:none;
+    padding:14px;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.sendBtn:hover{
+    background:#1d4ed8;
+}
+
+#successMessage{
+    text-align:center;
+    margin-top:15px;
+    color:#16a34a;
+    font-weight:600;
+}
+
+/* ===============================
+   DARK MODE
+================================= */
 
 .dark-mode{
-    background:#121212;
+    background:linear-gradient(135deg,#020617,#111827,#1e3a8a);
 }
 
 .dark-mode .container{
-    background:#1f1f1f;
+    background:#111827;
 }
 
-.dark-mode h1,
+.dark-mode .hero h1,
 .dark-mode h2,
 .dark-mode h3,
 .dark-mode p,
@@ -16,26 +297,73 @@
     color:white;
 }
 
-.dark-mode li{
-    background:#333;
+.dark-mode .section:hover{
+    background:#1f2937;
 }
 
-/* Button */
+.dark-mode ul li{
+    background:#1e293b;
+}
 
-#darkModeBtn{
-    margin-top:15px;
-    margin-bottom:20px;
-    padding:10px 20px;
-    border:none;
-    border-radius:8px;
-    background:#2563eb;
+.dark-mode .tech span{
+    background:#0ea5e9;
+}
+
+.dark-mode input,
+.dark-mode textarea{
+    background:#1e293b;
     color:white;
-    cursor:pointer;
-    font-size:16px;
-    transition:0.3s;
+    border:1px solid #475569;
 }
 
-#darkModeBtn:hover{
-    background:#1d4ed8;
+.dark-mode input::placeholder,
+.dark-mode textarea::placeholder{
+    color:#cbd5e1;
 }
+
+/* ===============================
+   ANIMATION
+================================= */
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* ===============================
+   RESPONSIVE
+================================= */
+
+@media(max-width:768px){
+
+    body{
+        padding:20px;
+    }
+
+    .container{
+        padding:25px;
+    }
+
+    .hero h1{
+        font-size:30px;
+    }
+
+    .profile-picture{
+        width:140px;
+        height:140px;
+    }
+
+    .tech{
+        justify-content:center;
+    }
+
 }
