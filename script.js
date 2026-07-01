@@ -1,112 +1,215 @@
-// =========================================
+// ==========================================
+// HAMBURGER MENU
+// ==========================================
+
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+menuBtn.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+});
+
+// ==========================================
 // DARK MODE
-// =========================================
+// ==========================================
 
 const darkModeBtn = document.getElementById("darkModeBtn");
 
-darkModeBtn.addEventListener("click", function () {
+darkModeBtn.addEventListener("click", () => {
 
     document.body.classList.toggle("dark-mode");
 
-    if (document.body.classList.contains("dark-mode")) {
+    if(document.body.classList.contains("dark-mode")){
         darkModeBtn.innerHTML = "☀️ Light Mode";
-    } else {
+    }else{
         darkModeBtn.innerHTML = "🌙 Dark Mode";
     }
 
 });
 
-// =========================================
+// ==========================================
 // LIVE CLOCK
-// =========================================
+// ==========================================
 
-function updateClock() {
+function updateClock(){
 
     const now = new Date();
 
     const options = {
-        weekday: "long",
-        month: "long",
-        day: "numeric",
-        year: "numeric",
-        hour: "2-digit",
-        minute: "2-digit",
-        second: "2-digit"
+        weekday:"long",
+        year:"numeric",
+        month:"long",
+        day:"numeric",
+        hour:"2-digit",
+        minute:"2-digit",
+        second:"2-digit"
     };
 
-    document.getElementById("clock").textContent =
+    document.getElementById("clock").innerHTML =
         now.toLocaleString("en-US", options);
 
 }
 
 updateClock();
-setInterval(updateClock, 1000);
 
-// =========================================
+setInterval(updateClock,1000);
+
+// ==========================================
+// TYPING EFFECT
+// ==========================================
+
+const text =
+"Future Software Developer | Web Developer | BS Computer Science Student";
+
+let index = 0;
+
+function typing(){
+
+    if(index < text.length){
+
+        document.getElementById("typing").innerHTML += text.charAt(index);
+
+        index++;
+
+        setTimeout(typing,70);
+
+    }
+
+}
+
+typing();
+
+// ==========================================
 // CONTACT FORM
-// =========================================
+// ==========================================
 
 const contactForm = document.getElementById("contactForm");
-const successMessage = document.getElementById("successMessage");
 
-contactForm.addEventListener("submit", function (event) {
+contactForm.addEventListener("submit",function(e){
 
-    event.preventDefault();
+    e.preventDefault();
 
-    successMessage.textContent = "✅ Thank you! Your message has been sent successfully.";
-
-    successMessage.style.color = "#16a34a";
+    document.getElementById("successMessage").innerHTML =
+    "✅ Thank you! Your message has been sent successfully.";
 
     contactForm.reset();
 
-    setTimeout(function () {
-        successMessage.textContent = "";
-    }, 3000);
+});
+
+// ==========================================
+// BACK TO TOP BUTTON
+// ==========================================
+
+const topBtn = document.getElementById("topBtn");
+
+window.onscroll = function(){
+
+    if(document.documentElement.scrollTop > 250){
+
+        topBtn.style.display = "block";
+
+    }else{
+
+        topBtn.style.display = "none";
+
+    }
+
+};
+
+topBtn.addEventListener("click",function(){
+
+    window.scrollTo({
+
+        top:0,
+
+        behavior:"smooth"
+
+    });
 
 });
 
-// =========================================
-// PROFILE PICTURE ANIMATION
-// =========================================
+// ==========================================
+// ACTIVE NAVIGATION
+// ==========================================
+
+const sections = document.querySelectorAll("section");
+const navItems = document.querySelectorAll(".nav-links a");
+
+window.addEventListener("scroll",()=>{
+
+    let current = "";
+
+    sections.forEach(section=>{
+
+        const sectionTop = section.offsetTop - 120;
+
+        if(pageYOffset >= sectionTop){
+
+            current = section.getAttribute("id");
+
+        }
+
+    });
+
+    navItems.forEach(link=>{
+
+        link.classList.remove("active");
+
+        if(link.getAttribute("href") == "#" + current){
+
+            link.classList.add("active");
+
+        }
+
+    });
+
+});
+
+// ==========================================
+// PROFILE IMAGE ANIMATION
+// ==========================================
 
 const profile = document.querySelector(".profile-picture");
 
-profile.addEventListener("mouseenter", function () {
-    profile.style.transform = "scale(1.08)";
+profile.addEventListener("mouseover",()=>{
+
+    profile.style.transform = "scale(1.08) rotate(2deg)";
+
 });
 
-profile.addEventListener("mouseleave", function () {
+profile.addEventListener("mouseout",()=>{
+
     profile.style.transform = "scale(1)";
-});
-
-// =========================================
-// TECH STACK ANIMATION
-// =========================================
-
-const techItems = document.querySelectorAll(".tech span");
-
-techItems.forEach(function(item){
-
-    item.addEventListener("mouseenter", function(){
-
-        item.style.transform = "translateY(-5px) scale(1.05)";
-
-    });
-
-    item.addEventListener("mouseleave", function(){
-
-        item.style.transform = "translateY(0) scale(1)";
-
-    });
 
 });
 
-// =========================================
-// WELCOME MESSAGE
-// =========================================
+// ==========================================
+// FADE-IN ANIMATION
+// ==========================================
 
-window.onload = function(){
+const cards = document.querySelectorAll(".section");
 
-    console.log("Welcome to Augusto Manuel L. Bañez's Portfolio!");
+const observer = new IntersectionObserver(entries=>{
 
-};
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+
+        }
+
+    });
+
+});
+
+cards.forEach(card=>{
+
+    card.style.opacity = "0";
+    card.style.transform = "translateY(30px)";
+    card.style.transition = ".8s";
+
+    observer.observe(card);
+
+});
