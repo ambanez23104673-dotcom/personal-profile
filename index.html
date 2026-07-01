@@ -6,212 +6,344 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Augusto Manuel L. Bañez | Portfolio</title>
 
+    <!-- Google Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- Navigation -->
-    <nav class="navbar">
-        <h2>My Portfolio</h2>
+<!-- ================= NAVBAR ================= -->
 
-        <ul>
+<header>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            Augusto<span>.</span>
+        </div>
+
+        <ul class="nav-links" id="navLinks">
+
+            <li><a href="#home">Home</a></li>
+
             <li><a href="#about">About</a></li>
+
             <li><a href="#education">Education</a></li>
+
             <li><a href="#skills">Skills</a></li>
+
             <li><a href="#projects">Projects</a></li>
+
             <li><a href="#contact">Contact</a></li>
+
         </ul>
+
+        <div class="menu-btn" id="menuBtn">
+
+            ☰
+
+        </div>
+
     </nav>
 
-    <div class="container">
+</header>
 
-        <!-- Hero Section -->
-        <header class="hero">
+<!-- ================= HERO ================= -->
 
-            <img src="image/profile.jpg" alt="Profile Picture" class="profile-picture">
+<section class="hero" id="home">
 
-            <h1>Augusto Manuel L. Bañez</h1>
+    <div class="hero-content">
 
-            <h3>BS Computer Science Student</h3>
+        <img src="image/profile.jpg"
+             alt="Profile Picture"
+             class="profile-picture">
 
-            <p id="clock"></p>
+        <h1>Augusto Manuel L. Bañez</h1>
 
-            <button id="darkModeBtn">🌙 Dark Mode</button>
+        <h3 id="typing"></h3>
 
-        </header>
+        <p class="hero-text">
 
-        <!-- About -->
-        <section class="section" id="about">
+            Welcome to my personal portfolio.
+            I am passionate about web development,
+            programming, and continuously learning new technologies.
 
-            <h2>👤 About Me</h2>
+        </p>
 
-            <p>
-                I am a Bachelor of Science in Computer Science student at
-                Don Mariano Marcos Memorial State University.
-                I enjoy learning web development, programming,
-                and creating modern applications that solve real-world problems.
-            </p>
+        <div class="hero-buttons">
 
-        </section>
+            <button id="darkModeBtn">
 
-        <!-- Education -->
-        <section class="section" id="education">
+                🌙 Dark Mode
 
-            <h2>🎓 Education</h2>
+            </button>
 
-            <ul>
-                <li>Don Mariano Marcos Memorial State University - SLUC</li>
-                <li>Bachelor of Science in Computer Science</li>
-            </ul>
+            <a href="#contact" class="btn">
 
-        </section>
+                Contact Me
 
-        <!-- Tech Stack -->
-        <section class="section">
+            </a>
 
-            <h2>💻 Tech Stack</h2>
+        </div>
 
-            <div class="tech">
-
-                <span>HTML5</span>
-                <span>CSS3</span>
-                <span>JavaScript</span>
-                <span>Git</span>
-                <span>GitHub</span>
-                <span>Visual Studio Code</span>
-
-            </div>
-
-        </section>
-
-        <!-- Skills -->
-        <section class="section" id="skills">
-
-            <h2>📊 Skills</h2>
-
-            <p>HTML</p>
-
-            <div class="bar">
-                <div class="html">90%</div>
-            </div>
-
-            <p>CSS</p>
-
-            <div class="bar">
-                <div class="css">85%</div>
-            </div>
-
-            <p>JavaScript</p>
-
-            <div class="bar">
-                <div class="js">70%</div>
-            </div>
-
-            <p>Git & GitHub</p>
-
-            <div class="bar">
-                <div class="git">75%</div>
-            </div>
-
-        </section>
-
-        <!-- Hobbies -->
-        <section class="section">
-
-            <h2>🎯 Hobbies</h2>
-
-            <ul>
-                <li>🎮 Playing Games</li>
-                <li>🎬 Watching Movies</li>
-                <li>🎵 Listening to Music</li>
-                <li>💻 Learning New Technologies</li>
-            </ul>
-
-        </section>
-
-        <!-- Projects -->
-        <section class="section" id="projects">
-
-            <h2>📂 Projects</h2>
-
-            <div class="project-card">
-                <h3>Personal Portfolio Website</h3>
-                <p>
-                    A responsive portfolio website built using HTML, CSS, and JavaScript.
-                    It includes dark mode, a live clock, responsive design, and a contact form.
-                </p>
-            </div>
-
-            <div class="project-card">
-                <h3>Future Web Projects</h3>
-                <p>
-                    More web development and programming projects will be added here as I continue learning.
-                </p>
-            </div>
-
-        </section>
-
-        <!-- Contact Information -->
-        <section class="section" id="contact">
-
-            <h2>📞 Contact Information</h2>
-
-            <ul>
-                <li>📧 Email: augustomanuelbanez@gmail.com</li>
-                <li>📱 Phone: 09XXXXXXXXX</li>
-                <li>📍 Location: La Union, Philippines</li>
-            </ul>
-
-        </section>
-
-        <!-- Contact Form -->
-        <section class="section">
-
-            <h2>📩 Contact Me</h2>
-
-            <form id="contactForm">
-
-                <input
-                    type="text"
-                    id="name"
-                    placeholder="Your Name"
-                    required>
-
-                <input
-                    type="email"
-                    id="email"
-                    placeholder="Your Email"
-                    required>
-
-                <textarea
-                    id="message"
-                    placeholder="Write your message here..."
-                    required></textarea>
-
-                <button
-                    class="sendBtn"
-                    type="submit">
-                    Send Message
-                </button>
-
-            </form>
-
-            <p id="successMessage"></p>
-
-        </section>
-
-        <!-- Footer -->
-        <footer>
-
-            <p>© 2026 Augusto Manuel L. Bañez | BS Computer Science Student</p>
-
-        </footer>
+        <p id="clock"></p>
 
     </div>
 
-    <!-- JavaScript -->
-    <script src="script.js"></script>
+</section>
+
+<!-- ================= ABOUT ================= -->
+
+<section class="section" id="about">
+
+<h2>About Me</h2>
+
+<p>
+
+I am currently pursuing a Bachelor of Science in Computer Science at
+Don Mariano Marcos Memorial State University.
+
+I enjoy creating responsive websites,
+learning programming languages,
+and solving real-world problems through technology.
+
+</p>
+
+</section>
+
+<!-- ================= EDUCATION ================= -->
+
+<section class="section" id="education">
+
+<h2>Education</h2>
+
+<div class="card">
+
+<h3>Bachelor of Science in Computer Science</h3>
+
+<p>
+
+Don Mariano Marcos Memorial State University - SLUC
+
+</p>
+
+</div>
+
+</section>
+
+<!-- ================= TECH STACK ================= -->
+
+<section class="section">
+
+<h2>Tech Stack</h2>
+
+<div class="tech">
+
+<span>HTML5</span>
+
+<span>CSS3</span>
+
+<span>JavaScript</span>
+
+<span>Git</span>
+
+<span>GitHub</span>
+
+<span>Visual Studio Code</span>
+
+</div>
+
+</section>
+
+<!-- ================= SKILLS ================= -->
+
+<section class="section" id="skills">
+
+<h2>Skills</h2>
+
+<div class="skill">
+
+<p>HTML</p>
+
+<div class="bar">
+
+<div class="html">90%</div>
+
+</div>
+
+</div>
+
+<div class="skill">
+
+<p>CSS</p>
+
+<div class="bar">
+
+<div class="css">85%</div>
+
+</div>
+
+</div>
+
+<div class="skill">
+
+<p>JavaScript</p>
+
+<div class="bar">
+
+<div class="js">75%</div>
+
+</div>
+
+</div>
+
+<div class="skill">
+
+<p>Git & GitHub</p>
+
+<div class="bar">
+
+<div class="git">80%</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= PROJECTS ================= -->
+
+<section class="section" id="projects">
+
+<h2>Projects</h2>
+
+<div class="project-grid">
+
+<div class="project-card">
+
+<h3>Personal Portfolio</h3>
+
+<p>
+
+A responsive portfolio website built using
+HTML, CSS, and JavaScript.
+
+</p>
+
+</div>
+
+<div class="project-card">
+
+<h3>Future Projects</h3>
+
+<p>
+
+More web development projects
+will be added here soon.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= HOBBIES ================= -->
+
+<section class="section">
+
+<h2>Hobbies</h2>
+
+<div class="hobbies">
+
+<div>🎮 Gaming</div>
+
+<div>🎬 Movies</div>
+
+<div>🎵 Music</div>
+
+<div>💻 Coding</div>
+
+</div>
+
+</section>
+
+<!-- ================= CONTACT ================= -->
+
+<section class="section" id="contact">
+
+<h2>Contact Me</h2>
+
+<div class="contact-info">
+
+<p>📧 augustomanuelbanez@gmail.com</p>
+
+<p>📍 La Union, Philippines</p>
+
+</div>
+
+<form id="contactForm">
+
+<input
+type="text"
+id="name"
+placeholder="Your Name"
+required>
+
+<input
+type="email"
+id="email"
+placeholder="Your Email"
+required>
+
+<textarea
+id="message"
+placeholder="Your Message"
+required></textarea>
+
+<button
+type="submit"
+class="sendBtn">
+
+Send Message
+
+</button>
+
+<p id="successMessage"></p>
+
+</form>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<p>
+
+© 2026 Augusto Manuel L. Bañez
+
+</p>
+
+<p>
+
+BS Computer Science Student
+
+</p>
+
+</footer>
+
+<button id="topBtn">
+
+↑
+
+</button>
+
+<script src="script.js"></script>
 
 </body>
 
