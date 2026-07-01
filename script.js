@@ -85,14 +85,35 @@ typing();
 
 const contactForm = document.getElementById("contactForm");
 
-contactForm.addEventListener("submit",function(e){
+contactForm.addEventListener("submit", function(e){
 
     e.preventDefault();
 
-    document.getElementById("successMessage").innerHTML =
-    "✅ Thank you! Your message has been sent successfully.";
+    emailjs.send(
+        "service_rwn6ny9",
+        "template_6ggvd8p",
+        {
+            from_name: document.getElementById("name").value,
+            from_email: document.getElementById("email").value,
+            message: document.getElementById("message").value
+        }
+    )
+    .then(function(){
 
-    contactForm.reset();
+        document.getElementById("successMessage").innerHTML =
+        "✅ Message sent successfully!";
+
+        contactForm.reset();
+
+    })
+    .catch(function(error){
+
+        document.getElementById("successMessage").innerHTML =
+        "❌ Failed to send message.";
+
+        console.log(error);
+
+    });
 
 });
 
